@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Fibonaci.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LearnInterface</a> &gt; <a href="index.source.html" class="el_package">com.blitznihar.app.implementation</a> &gt; <span class="el_source">Fibonaci.java</span></div><h1>Fibonaci.java</h1><pre class="source lang-java linenums">package com.blitznihar.app.implementation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.blitznihar.app.interfaces.IFibonaci;
+
+<span class="fc" id="L8">public class Fibonaci implements IFibonaci {</span>
+
+    @Override
+    public List&lt;Integer&gt; getFiboUntil(int intUntil) {
+<span class="fc" id="L12">        ArrayList&lt;Integer&gt; listFibonaci = new ArrayList&lt;Integer&gt;();</span>
+<span class="fc" id="L13">        int i = 0;</span>
+<span class="fc" id="L14">        int j = 0;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for(int x=0; x&lt;intUntil;)</span>
+        {
+<span class="fc" id="L17">            listFibonaci.add(x);</span>
+<span class="fc" id="L18">            x= getNextFibonaci(i,j);</span>
+<span class="fc" id="L19">            i=j;</span>
+<span class="fc" id="L20">            j=x;</span>
+        }
+<span class="fc" id="L22">        return listFibonaci;</span>
+    }
+    public static Integer getNextFibonaci(Integer startValue, Integer endValue){
+<span class="fc" id="L25">        Integer nextValue = 0;</span>
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        if(startValue==0 &amp;&amp; endValue==0)</span>
+<span class="fc" id="L27">        nextValue = 1;</span>
+        else
+<span class="fc" id="L29">        nextValue =startValue+endValue;</span>
+<span class="fc" id="L30">        return nextValue;</span>
+    }
+    public static void print(List&lt;Integer&gt; fibo){
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (Integer x : fibo) {</span>
+<span class="fc" id="L34">            System.out.println(x);    </span>
+<span class="fc" id="L35">        }</span>
+<span class="fc" id="L36">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
