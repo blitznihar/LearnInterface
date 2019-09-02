@@ -12,12 +12,19 @@ public class Fibonaci implements IFibonaci {
         ArrayList<Integer> listFibonaci = new ArrayList<Integer>();
         int i = 0;
         int j = 0;
-        for(int x=0; x<intUntil;)
+        int k = 0; 
+        
+        
+        return calculateFibo(intUntil, listFibonaci, i, j, k);
+    }
+    private ArrayList<Integer> calculateFibo(int intUntil, ArrayList<Integer> listFibonaci, int i, int j, int k) {
+        if(k<intUntil)
         {
-            listFibonaci.add(x);
-            x= getNextFibonaci(i,j);
+            listFibonaci.add(k);
+            k= getNextFibonaci(i,j);
             i=j;
-            j=x;
+            j=k;   
+            calculateFibo(intUntil, listFibonaci, i, j, k);
         }
         return listFibonaci;
     }
